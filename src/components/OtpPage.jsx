@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import "@dotlottie/player-component";
 
 const OtpPage = ({ length = 4, onOtpSubmit = () => {}, num }) => {
@@ -51,7 +51,7 @@ const OtpPage = ({ length = 4, onOtpSubmit = () => {}, num }) => {
     }
   };
   return (
-    <>
+    <Suspense>
       {otpSubmit ? (
         <div className="h-2/3">
           <dotlottie-player
@@ -100,7 +100,7 @@ const OtpPage = ({ length = 4, onOtpSubmit = () => {}, num }) => {
           </div>
         </div>
       )}
-    </>
+    </Suspense>
   );
 };
 
